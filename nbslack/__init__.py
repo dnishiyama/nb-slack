@@ -11,7 +11,7 @@ def _set_ipython_exception_handler(handler):
   except:
     pass # Not running in ipython
 
-def notifying(sender='Jupyter Notebook',webhook=None,error_handle=False):
+def notifying(sender='Jupyter Notebook',webhook=None,error_handle=True):
   global WEBHOOK, _active, SENDER
   WEBHOOK=_select(webhook)
   SENDER=sender
