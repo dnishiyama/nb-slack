@@ -11,14 +11,15 @@ def _set_ipython_exception_handler(handler):
   except:
     pass # Not running in ipython
 
-def notifying(sender='Jupyter Notebook',webhook=None):
+def notifying(sender='Jupyter Notebook',webhook=None,error_handle=False):
   global WEBHOOK, _active, SENDER
   WEBHOOK=_select(webhook)
   SENDER=sender
   _active = WEBHOOK is not None
 
   # this registers a custom exception handler for the whole current notebook
-  _set_ipython_exception_handler(custom_exc)
+  if error_handle:
+    _set_ipython_exception_handler(custom_exc)
 
 def notify(msg):
   if not _active:
