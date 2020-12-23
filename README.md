@@ -1,3 +1,5 @@
+install with `python setup.py develop`
+
 # nb-slack
 
 Jupyter notebook extension for sending slack notifications from long running notebooks
